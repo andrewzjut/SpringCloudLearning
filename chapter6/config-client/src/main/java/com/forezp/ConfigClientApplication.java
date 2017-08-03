@@ -16,8 +16,15 @@ public class ConfigClientApplication {
 
 	@Value("${foo}")
 	String foo;
+
+	@Value("${https}")
+	String https;
+
+	@Value("${http}")
+	String http;
+
 	@RequestMapping(value = "/hi")
 	public String hi(){
-		return foo;
+		return foo + " " + http + " " + https;
 	}
 }
