@@ -22,8 +22,14 @@ public class ConfigClientApplication {
 	@Value("${foo}")
 	String foo;
 
+	@Value("${spring.application}")
+	String application;
+
+	@Value("${server}")
+	String server;
+
 	@RequestMapping(value = "/hi")
 	public String hi(){
-		return foo;
+		return foo + " " + application + " " + server;
 	}
 }
